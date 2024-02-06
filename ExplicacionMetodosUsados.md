@@ -80,36 +80,36 @@ Las siguientes funciones son muy útiles para trabajar con colecciones en Kotlin
      ```
 
 9. `groupingBy{}`:
-   - **Descripción**: `groupingBy{}` es una función que crea una instancia de `Grouping` a partir de una colección, clasificando los elementos por la clave devuelta por la función lambda proporcionada.
-   - **Uso**: Se utiliza para agrupar elementos de una colección por alguna clave y luego realizar operaciones de agregación en los grupos.
-   - **Ejemplo**:
+    - **Descripción**: `groupingBy{}` es una función que crea una instancia de `Grouping` a partir de una colección, clasificando los elementos por la clave devuelta por la función lambda proporcionada.
+    - **Uso**: Se utiliza para agrupar elementos de una colección por alguna clave y luego realizar operaciones de agregación en los grupos.
+    - **Ejemplo**:
      ```kotlin
      val words = listOf("a", "abc", "ab", "def", "abcd")
      val byLength = words.groupingBy { it.length }
      ```
 
 10. `eachCount()`:
-   - **Descripción**: `eachCount()` es una función que se utiliza junto con `groupingBy{}` para contar el número de elementos en cada grupo.
-   - **Uso**: Se usa después de `groupingBy{}` para realizar un recuento de elementos por grupo.
-   - **Ejemplo**:
+    - **Descripción**: `eachCount()` es una función que se utiliza junto con `groupingBy{}` para contar el número de elementos en cada grupo.
+    - **Uso**: Se usa después de `groupingBy{}` para realizar un recuento de elementos por grupo.
+    - **Ejemplo**:
      ```kotlin
      // Continuando del ejemplo anterior
      val countByLength = byLength.eachCount() // Devuelve un mapa {1=1, 3=2, 2=1, 4=1}
      ```
 
 11. `maxByOrNull{}`:
-   - **Descripción**: `maxByOrNull{}` devuelve el primer elemento que tiene el mayor valor de la función proporcionada o `null` si la colección está vacía.
-   - **Uso**: Se usa para encontrar un elemento con el valor máximo basado en una condición específica.
-   - **Ejemplo**:
+    - **Descripción**: `maxByOrNull{}` devuelve el primer elemento que tiene el mayor valor de la función proporcionada o `null` si la colección está vacía.
+    - **Uso**: Se usa para encontrar un elemento con el valor máximo basado en una condición específica.
+    - **Ejemplo**:
      ```kotlin
      val numbers = listOf(1, 2, 3, 4)
      val maxNumber = numbers.maxByOrNull { it } // Devuelve 4
      ```
 
 12. `filter{}`:
-   - **Descripción**: `filter{}` es una función que evalúa cada elemento de una colección y devuelve una nueva colección que contiene solo los elementos que cumplen con la condición especificada en la función lambda.
-   - **Uso**: Se usa para filtrar elementos de una colección basándose en una condición. Solo los elementos que hagan que la función lambda devuelva `true` serán incluidos en la colección resultante.
-   - **Ejemplo**:
+    - **Descripción**: `filter{}` es una función que evalúa cada elemento de una colección y devuelve una nueva colección que contiene solo los elementos que cumplen con la condición especificada en la función lambda.
+    - **Uso**: Se usa para filtrar elementos de una colección basándose en una condición. Solo los elementos que hagan que la función lambda devuelva `true` serán incluidos en la colección resultante.
+    - **Ejemplo**:
      ```kotlin
      val numbers = listOf(1, 2, 3, 4, 5, 6)
      val evenNumbers = numbers.filter { it % 2 == 0 } // Devuelve [2, 4, 6]
